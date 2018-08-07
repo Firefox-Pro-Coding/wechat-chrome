@@ -20,9 +20,10 @@ function getEntry (rootSrc, pattern) {
   }, {})
 }
 
-const appEntry = { app: resolve('./src/main.js') }
+const appEntry = { app: resolve('./src/main.ts') }
 const pagesEntry = getEntry(resolve('./src'), 'pages/**/main.js')
-const entry = Object.assign({}, appEntry, pagesEntry)
+const tsPagesEntry = getEntry(resolve('./src'), 'pages/**/main.ts')
+const entry = Object.assign({}, appEntry, pagesEntry, tsPagesEntry)
 
 module.exports = {
   // 如果要自定义生成的 dist 目录里面的文件路径，
@@ -38,10 +39,11 @@ module.exports = {
       : config.dev.assetsPublicPath
   },
   resolve: {
-    extensions: ['.js', '.vue', '.json'],
+    extensions: ['.ts', '.d.ts', '.js', '.json', '.vue'],
     alias: {
       'vue': 'mpvue',
-      '@': resolve('src')
+      '@': resolve('src'),
+      '~': resolve('src'),
     },
     symlinks: false,
     aliasFields: ['mpvue', 'weapp', 'browser'],
@@ -77,6 +79,20 @@ module.exports = {
         ]
       },
       {
+        test: /\.tsx?$/,
+        exclude: /node_modules/,
+        use: [
+          'babel-loader',
+          {
+            loader: 'mpvue-loader',
+            options: {
+              checkMPEntry: true
+            }
+          },
+          'ts-loader',
+        ]
+      },
+      {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
         loader: 'url-loader',
         options: {
@@ -102,7 +118,21 @@ module.exports = {
       }
     ]
   },
+  // optimization: {
+  //   splitChunks: {
+  //     cacheGroups: {
+  //       vendor: {
+  //         name: 'vendor',
+  //         test: /[\\/]node_modules[\\/]/,
+  //       },
+  //       manifest: {
+  //         name: 'manifest',
+  //         chunks: ['vendor'],
+  //       },
+  //     },
+  //   },
+  // },
   plugins: [
     new MpvuePlugin()
-  ]
+  ],
 }

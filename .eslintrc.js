@@ -1,31 +1,45 @@
-// http://eslint.org/docs/user-guide/configuring
+const path = require('path')
+
+function resolve(p) {
+  return path.join(__dirname, p)
+}
 
 module.exports = {
-  root: true,
-  parser: 'babel-eslint',
-  parserOptions: {
-    sourceType: 'module'
-  },
-  env: {
-    browser: false,
-    node: true,
-    es6: true
-  },
-  // required to lint *.vue files
-  plugins: [
-    'html'
+  'root': true,
+
+  'extends': [
+    './lintRules/eslint/eslint.js',
   ],
-  // add your custom rules here
-  'rules': {
-    // allow debugger during development
-    'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0
+
+  'env': {
+    'es6': true,
+    'node': true,
+    'browser': true,
   },
-  globals: {
-    App: true,
-    Page: true,
-    wx: true,
-    getApp: true,
-    getPage: true,
-    requirePlugin: true
-  }
+
+  'settings': {
+    'import/resolver': {
+      'webpack': {
+        'config': require('./build/webpack.base.conf.js')
+      },
+    },
+  },
+
+  'globals': {
+    'App': true,
+    'Page': true,
+    'wx': true,
+    'getApp': true,
+    'getPage': true,
+    'requirePlugin': true
+  },
+
+  'rules': {
+    'no-shadow': [
+      'error',
+      {
+        'allow': ['state'],
+      },
+    ],
+  },
 }

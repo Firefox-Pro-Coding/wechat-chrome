@@ -1,0 +1,15 @@
+{
+  "defaultSeverity": "error",
+  "extends": [
+    "tslint-eslint-rules",
+    "tslint-consistent-codestyle",
+    "./lintRules/tslint/coreRules.json",
+    "./lintRules/tslint/codestyle.json",
+    "./lintRules/tslint/tslintEslint.json"
+  ],
+  "jsRules": {},
+  "rules": {
+    "interface-delimiter": true
+  },
+  "rulesDirectory": ["./lintRules/tslint/customRules"]
+}

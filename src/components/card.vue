@@ -1,19 +1,24 @@
 <template>
   <div>
     <p class="card">
-      {{text}}
+      {{ text }}
     </p>
   </div>
 </template>
 
 <script>
-export default {
-  props: ['text']
-}
+  export default {
+    props: {
+      text: {
+        type: String,
+        default: '',
+      },
+    },
+  }
 </script>
 
 <style>
-.card {
-  padding: 10px;
-}
+  .card {
+    padding: 10px;
+  }
 </style>
