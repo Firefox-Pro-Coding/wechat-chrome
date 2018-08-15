@@ -41,7 +41,7 @@
       }
     ],
     "no-empty-interface": true,
-    "no-import-side-effect": true,
+    "no-import-side-effect": [true, {"ignore-module": "(\\.html|\\.css)$"}],
     "no-internal-module": true,
     "no-namespace": true,
     "no-non-null-assertion": true,
