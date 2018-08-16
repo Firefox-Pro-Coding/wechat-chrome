@@ -1,13 +1,41 @@
 {
   "pages": [
+    "pages/shop/main",
     "pages/index/main",
     "pages/counter/main",
     "pages/logs/main"
   ],
   "window": {
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle": "black"
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#FE6601",
+    "navigationBarTitleText": "Chrome",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/shop/main",
+      "text": "商城",
+      "iconPath": "static/images/home.png",
+      "selectedIconPath": "static/images/home_fill.png"
+      }, {
+      "pagePath": "pages/logs/main",
+      "text": "分类",
+      "iconPath": "static/images/list.png",
+      "selectedIconPath": "static/images/list_fill.png"
+    }, {
+      "pagePath": "pages/logs/main",
+      "text": "推送",
+      "iconPath": "static/images/toy.png",
+      "selectedIconPath": "static/images/toy_fill.png"
+    }, {
+      "pagePath": "pages/index/main",
+      "text": "我的",
+      "iconPath": "static/images/wode.png",
+      "selectedIconPath": "static/images/wode_fill.png"
+    }],
+    "backgroundColor": "#fff",
+    "borderStyle": "black",
+    "color": "#444",
+    "selectedColor": "#FE6601"
   }
 }

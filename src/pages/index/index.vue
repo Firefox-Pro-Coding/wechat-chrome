@@ -14,6 +14,8 @@
       </div>
     </div>
 
+    <button open-type="getUserInfo" v-if="!userInfo.avatarUrl">获取授权</button>
+
     <form class="form-container">
       <input type="text" class="form-control" v-model="motto" placeholder="v-model" />
       <input type="text" class="form-control" v-model.lazy="motto" placeholder="v-model.lazy" />
@@ -43,7 +45,7 @@
   }
 
   .usermotto {
-    margin-top: 150px;
+    margin-top: 20px;
   }
 
   .form-control {

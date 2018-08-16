@@ -6,7 +6,7 @@
       <button @click="decrement">-</button>
     </p>
 
-    <a href="/pages/index/main" class="home">去往首页</a>
+    <a @click="navBack" class="home">去往首页</a>
   </div>
 </template>
 
@@ -24,8 +24,15 @@
       increment() {
         store.commit('increment')
       },
+
       decrement() {
         store.commit('decrement')
+      },
+
+      navBack() {
+        wx.switchTab({
+          url: '/pages/index/main',
+        })
       },
     },
   }
