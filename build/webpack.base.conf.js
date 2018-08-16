@@ -5,25 +5,32 @@ var config = require('../config')
 var vueLoaderConfig = require('./vue-loader.conf')
 var MpvuePlugin = require('webpack-mpvue-asset-plugin')
 var glob = require('glob')
+var CopyWebpackPlugin = require('copy-webpack-plugin')
+var relative = require('relative')
 
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
 
-function getEntry (rootSrc, pattern) {
-  var files = glob.sync(path.resolve(rootSrc, pattern))
-  return files.reduce((res, file) => {
-    var info = path.parse(file)
-    var key = info.dir.slice(rootSrc.length + 1) + '/' + info.name
-    res[key] = path.resolve(file)
-    return res
-  }, {})
+function getEntry (rootSrc) {
+  var map = {};
+  glob.sync(rootSrc + '/pages/**/main.js')
+  .forEach(file => {
+    var key = relative(rootSrc, file).replace('.js', '');
+    map[key] = file;
+  })
+  glob.sync(rootSrc + '/pages/**/main.ts')
+  .forEach(file => {
+    var key = relative(rootSrc, file).replace('.ts', '');
+    map[key] = file;
+  })
+   return map;
 }
 
 const appEntry = { app: resolve('./src/main.ts') }
 const pagesEntry = getEntry(resolve('./src'), 'pages/**/main.js')
-const tsPagesEntry = getEntry(resolve('./src'), 'pages/**/main.ts')
-const entry = Object.assign({}, appEntry, pagesEntry, tsPagesEntry)
+// const tsPagesEntry = getEntry(resolve('./src'), 'pages/**/main.ts')
+const entry = Object.assign({}, appEntry, pagesEntry)
 
 module.exports = {
   // 如果要自定义生成的 dist 目录里面的文件路径，
@@ -133,6 +140,19 @@ module.exports = {
   //   },
   // },
   plugins: [
-    new MpvuePlugin()
+    new MpvuePlugin(),
+    new CopyWebpackPlugin([{
+      from: '**/*.json',
+      to: ''
+    }], {
+      context: 'src/'
+    }),
+    new CopyWebpackPlugin([ // 处理 main.json 里面引用的图片，不要放代码中引用的图片
+      {
+        from: path.resolve(__dirname, '../static'),
+        to: path.resolve(__dirname, '../dist/static'),
+        ignore: ['.*']
+      }
+    ]),
   ],
 }
