@@ -2,6 +2,7 @@ import Vue from 'vue'
 import { Component } from 'vue-property-decorator'
 
 import App from './App.vue'
+import 'font-awesome/css/font-awesome.min.css'
 
 Vue.config.productionTip = false
 App.mpType = 'app'
@@ -28,21 +29,3 @@ Component.registerHooks([
   'onPageScroll', // 页面滚动
   'onTabItemTap', // 当前是 tab 页时， 点击 tab 时触发 （mpvue 0.0.16 支持）
 ])
-
-// export default {
-//   // 这个字段走 app.json
-//   config: {
-//     // 页面前带有 ^ 符号的，会被编译成首页，其他页面可以选填，我们会自动把 webpack entry 里面的入口页面加进去
-//     pages: [
-//       'pages/logs/main',
-//       '^pages/index/main',
-//     ],
-
-//     window: {
-//       backgroundTextStyle: 'light',
-//       navigationBarBackgroundColor: '#fff',
-//       navigationBarTitleText: 'WeChat',
-//       navigationBarTextStyle: 'black',
-//     },
-//   },
-// }

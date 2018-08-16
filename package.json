@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "cssnano": "^3.10.0",
+    "font-awesome": "^4.7.0",
     "mpvue": "^1.0.13",
     "prettier": "^1.14.2",
     "typescript": "^3.0.1",
