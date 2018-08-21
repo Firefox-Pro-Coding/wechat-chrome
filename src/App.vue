@@ -1,6 +1,11 @@
 <script lang="ts" src="./app.ts"></script>
 
 <style>
+page {
+  background: #f2f2f2;
+  color: #444;
+}
+
 .container {
   height: 100%;
   display: flex;
@@ -10,6 +15,7 @@
   padding: 200rpx 0;
   box-sizing: border-box;
 }
+
 /* this rule will be remove */
 * {
   transition: width 2s;

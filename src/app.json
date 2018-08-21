@@ -7,9 +7,9 @@
   ],
   "window": {
     "backgroundTextStyle": "dark",
-    "navigationBarBackgroundColor": "#FE6601",
+    "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "Chrome",
-    "navigationBarTextStyle": "white"
+    "navigationBarTextStyle": "black"
   },
   "tabBar": {
     "list": [{
@@ -36,6 +36,6 @@
     "backgroundColor": "#fff",
     "borderStyle": "black",
     "color": "#444",
-    "selectedColor": "#FE6601"
+    "selectedColor": "#fe6601"
   }
 }
