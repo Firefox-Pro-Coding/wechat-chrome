@@ -6,7 +6,7 @@
       <span class="notice-bar-showcase">{{ text }}</span>
     </div>
     <div class="notice-bar-right">
-      <i class="fa fa-angle-right  right-side-icon" aria-hidden="true"></i>
+      <i class="fa fa-angle-right right-side-icon" aria-hidden="true"></i>
     </div>
   </div>
 </template>
@@ -68,8 +68,7 @@
   }
 
   .notice-bar .right-side-icon {
-    /* float: right;
-    line-height: 40rpx; */
-    font-size:34rpx;
+    font-size: 18px;
+    color: #cecece;
   }
 </style>

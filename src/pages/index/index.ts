@@ -33,7 +33,7 @@ export default class extends Vue {
       success: () => {
         wx.getUserInfo({
           success: (res) => {
-            console.log(res);
+            console.log(res)
             this.userInfo = res.userInfo
           },
         })

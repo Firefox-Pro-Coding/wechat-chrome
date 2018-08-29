@@ -24,11 +24,11 @@ export default class extends Vue {
     ]
   }
 
-  public noticeInfo = '不好啦，战地5又出新dlc啦！！！不好啦，战地5又出新dlc啦！不好啦，战地5又出新dlc啦！不好啦，战地5又出新dlc啦！不好啦，战地5又出新dlc啦！'
+  public noticeInfo = 'notice here...'
 
   public topicCardConfig: TopicCardConfig = {
-    title: 'Electric Arts',
-    desc: 'Challenge Everythings',
+    title: 'Title',
+    desc: 'desc...',
     url: '/pages/counter/main?id=0',
     itemList: [],
   }
@@ -36,31 +36,31 @@ export default class extends Vue {
   public itemList = [{
     title: '麦乐酷',
     price: 10,
-    url: '/pages/counter/main?id=1',
+    url: '/pages/shop/shopDetail/main?id=1',
     imgUrl: 'https://i.loli.net/2018/08/22/5b7c768c7e60a.jpg',
     historyTimes: 50,
   }, {
-    title: '大盘鸡',
+    title: 'test item',
     price: 10,
-    url: '/pages/counter/main?id=2',
+    url: '/pages/shop/shopDetail/main?id=2',
     imgUrl: 'https://i.loli.net/2018/08/22/5b7c768c7e60a.jpg',
     historyTimes: 50,
   }, {
-    title: '很僵硬',
+    title: 'test item 2',
     price: 10,
-    url: '/pages/counter/main?id=3',
+    url: '/pages/shop/shopDetail/main?id=3',
     imgUrl: 'https://i.loli.net/2018/08/22/5b7c768c7e60a.jpg',
     historyTimes: 50,
   }, {
-    title: '缸鸭狗',
+    title: 'test item 3',
     price: 10,
-    url: '/pages/counter/main?id=4',
+    url: '/pages/shop/shopDetail/main?id=4',
     imgUrl: 'https://i.loli.net/2018/08/22/5b7c768c7e60a.jpg',
     historyTimes: 50,
   }, {
-    title: '绿水灵',
+    title: 'test item 3',
     price: 10,
-    url: '/pages/counter/main?id=5',
+    url: '/pages/shop/shopDetail/main?id=5',
     imgUrl: 'https://i.loli.net/2018/08/22/5b7c768c7e60a.jpg',
     historyTimes: 50,
   }]

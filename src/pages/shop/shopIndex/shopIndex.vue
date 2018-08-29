@@ -4,7 +4,7 @@
 
     <div class="page-swiper">
       <div class="page__bd page__bd_spacing">
-        <swiper :indicator-dots="swiperConfig.indicatorDots" :autoplay="swiperConfig.autoplay" :interval="swiperConfig.interval" :duration="swiperConfig.duration" :circular="swiperConfig.circular" @change="swiperChange" @animationfinish="animationfinish">
+        <swiper class="swiper" :indicator-dots="swiperConfig.indicatorDots" :autoplay="swiperConfig.autoplay" :interval="swiperConfig.interval" :duration="swiperConfig.duration" :circular="swiperConfig.circular" @change="swiperChange" @animationfinish="animationfinish">
           <div v-for="(item, index) in swiperConfig.imgUrls" :key="index">
             <swiper-item>
               <image :src="item" class="slide-image" mode="widthFix" />
@@ -21,7 +21,7 @@
   </div>
 </template>
 
-<script src="./shop.ts" lang="ts"></script>
+<script src="./shopIndex.ts" lang="ts"></script>
 
 <style scoped>
 .flex {
@@ -44,9 +44,10 @@
   font-size: 14px;
 }
 
-.swiper-page {
+.page-swiper {
   width: 100%;
 }
+
 .slide-image {
   width: 100%;
 }

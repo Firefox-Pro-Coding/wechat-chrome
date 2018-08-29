@@ -1,6 +1,7 @@
 {
   "pages": [
-    "pages/shop/main",
+    "pages/shop/shopIndex/main",
+    "pages/shop/shopDetail/main",
     "pages/index/main",
     "pages/counter/main",
     "pages/logs/main"
@@ -13,7 +14,7 @@
   },
   "tabBar": {
     "list": [{
-      "pagePath": "pages/shop/main",
+      "pagePath": "pages/shop/shopIndex/main",
       "text": "商城",
       "iconPath": "static/images/home.png",
       "selectedIconPath": "static/images/home_fill.png"

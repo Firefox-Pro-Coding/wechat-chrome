@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import App from './shop.vue'
+import App from './shopDetail.vue'
 
 const app = new Vue(App)
 app.$mount()
