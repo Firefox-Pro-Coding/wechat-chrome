@@ -21,17 +21,17 @@
           <span class="item-price">35.00</span>
         </div>
 
-        <div class="share-button-wrapper flex-co">
-          <i class="fa fa-share-square-o share-icon" aria-hidden="true"></i>
+        <div class="share-button-wrapper flex-co" @click="openShareActionSheet">
+          <i class="iconfont icon-share share-icon" aria-hidden="true"></i>
           <div class="share-text">分享</div>
         </div>
       </div>
-      <div class="item-name">spiz Icecream 通兑电子券（全国通兑、仅限购买当日使用）</div>
+      <div class="item-name">spiz Icecream 通兑电子券 {{ stateParams.id }}（全国通兑、仅限购买当日使用）</div>
     </div>
 
-    <div class="box mt-10 flex item-spec-wrapper">
+    <div class="box mt-10 flex item-spec-wrapper" @click="choseItemSpec">
       <div class="left-side-text">规格</div>
-      <i class="fa fa-angle-right right-side-icon" aria-hidden="true"></i>
+      <i class="iconfont icon-right right-side-icon"></i>
     </div>
 
     <div class="mt-10 item-desc-wrapper">
@@ -50,7 +50,7 @@
 
     <div class="foot-bar flex clearfix">
       <div class="foot-bar-cell foot-bar-item" @click="navToHome">
-        <i class="fa fa-home fs-18" aria-hidden="true"></i>
+        <i class="iconfont icon-home foot-bar-home-icon"></i>
         <div>首页</div>
       </div>
       <div class="foot-bar-cell foot-bar-item2">
@@ -62,6 +62,15 @@
         <div>拼团</div>
       </div>
     </div>
+
+    <custom-action-sheet ref="actionSheet1" :offset="100">
+      规格1
+      <i class="iconfont icon-close" @click="$refs.actionSheet1.close()"></i>
+    </custom-action-sheet>
+
+    <custom-action-sheet ref="actionSheet2">
+      分享
+    </custom-action-sheet>
   </div>
 </template>
 
@@ -138,7 +147,7 @@
 .item-spec-wrapper .right-side-icon {
   display: flex;
   align-items: center;
-  font-size: 18px;
+  font-size: 14px;
   color: #cecece;
 }
 
@@ -181,6 +190,11 @@
 
 .foot-bar .foot-bar-item {
   flex: 0 0 15%;
+}
+
+.foot-bar .foot-bar-home-icon {
+  font-size: 18px;
+  line-height: 18px;
 }
 
 .foot-bar-price {

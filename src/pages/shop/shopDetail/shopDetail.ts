@@ -1,11 +1,14 @@
 import { Component, Vue } from 'vue-property-decorator'
 import noticeBar from '@/components/noticeBar.vue'
+import CustomActionSheet from '@/components/customActionSheet/customActionSheet.vue'
+import CustomActionSheetClass from '@/components/customActionSheet/customActionSheet.ts'
 
 @Component({
   name: 'PageIndex',
   mpType: 'page',
   components: {
     noticeBar,
+    CustomActionSheet,
   },
 })
 export default class extends Vue {
@@ -21,7 +24,13 @@ export default class extends Vue {
     ]
   }
 
+  public stateParams = {}
+
   public noticeInfo = '详情页'
+
+  public mounted() {
+    console.log('mounted')
+  }
 
   public swiperChange(e: any) {
     console.log(`image ${e.mp.detail.current} scroll start`)
@@ -32,7 +41,8 @@ export default class extends Vue {
   }
 
   /**
-   * navToHome 回到首页
+   * navToHome
+   * 回到商品首页
    */
   public navToHome() {
     wx.switchTab({
@@ -40,7 +50,34 @@ export default class extends Vue {
     })
   }
 
-  // public mounted() {
-  // }
+  /**
+   * choseItemSpec
+   * 选择商品规格
+   */
+  public choseItemSpec() {
+    const actionSheet = this.$refs.actionSheet1 as CustomActionSheetClass
+    actionSheet.open()
+  }
+
+  /**
+   * openShareActionSheet
+   * 底部分享弹窗
+   */
+  public openShareActionSheet() {
+    const actionSheet = this.$refs.actionSheet2 as CustomActionSheetClass
+    actionSheet.open()
+  }
+
+  /**
+   * onShareAppMessage
+   */
+  public onShareAppMessage() {
+    console.log('share')
+  }
+
+  public onLoad(e: any) {
+    this.stateParams = e
+    console.log('stateParams', this.stateParams)
+  }
 
 }

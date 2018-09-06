@@ -36,7 +36,7 @@ export default class extends Vue {
   public itemList = [{
     title: '麦乐酷',
     price: 10,
-    url: '/pages/shop/shopDetail/main?id=1',
+    url: '/pages/shop/shopDetail/main?id=1&name=sdk',
     imgUrl: 'https://i.loli.net/2018/08/22/5b7c768c7e60a.jpg',
     historyTimes: 50,
   }, {
@@ -71,6 +71,13 @@ export default class extends Vue {
 
   public animationfinish(e: any) {
     console.log(`image ${e.mp.detail.current} scroll end`)
+  }
+
+  /**
+   * onShareAppMessage
+   */
+  public onShareAppMessage() {
+    console.log('share')
   }
 
   public mounted() {

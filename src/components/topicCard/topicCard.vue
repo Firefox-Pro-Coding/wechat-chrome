@@ -6,7 +6,7 @@
       <span class="topic-card-more">
         <a :href="topicCardConfig.url">
           更多
-          <i class="fa fa-angle-right right-side-icon" aria-hidden="true"></i>
+          <i class="iconfont icon-right right-side-icon"></i>
         </a>
       </span>
     </div>
@@ -42,7 +42,7 @@
   }
 
   .topic-card-wrapper {
-    padding: 10rpx 20rpx;
+    padding: 10rpx 20rpx 20rpx 20rpx;
     background: #fff7f7;
   }
 
@@ -62,8 +62,10 @@
   }
 
   .topic-card-wrapper .right-side-icon {
+    display:inline;
     margin: 2rpx 0 0 4rpx;
-    font-size:34rpx;
+    font-size:28rpx;
+    color:#cecece;
   }
 
   .topic-card-wrapper .topic-card-list-wrapper {

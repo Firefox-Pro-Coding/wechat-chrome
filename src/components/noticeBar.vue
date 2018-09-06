@@ -1,12 +1,12 @@
 <template>
   <div class="notice-bar">
     <div class="notice-bar-left">
-      <i class="fa fa-rss left-side-icon" aria-hidden="true"></i>
+      <i class="iconfont icon-sound left-side-icon"></i>
       <span class="notice-bar-title">{{ title }}</span>
       <span class="notice-bar-showcase">{{ text }}</span>
     </div>
     <div class="notice-bar-right">
-      <i class="fa fa-angle-right right-side-icon" aria-hidden="true"></i>
+      <i class="iconfont icon-right right-side-icon"></i>
     </div>
   </div>
 </template>
@@ -56,19 +56,20 @@
   }
 
   .notice-bar .notice-bar-title {
+    align-self: center;
     margin: 0 20rpx;
   }
   .notice-bar .notice-bar-showcase {
     flex: 1 1 0;
     width: 0;
     overflow: hidden;
+    align-self: center;
     text-overflow: ellipsis;
     white-space: nowrap;
     zoom: 1
   }
 
   .notice-bar .right-side-icon {
-    font-size: 18px;
-    color: #cecece;
+    font-size: 14px;
   }
 </style>

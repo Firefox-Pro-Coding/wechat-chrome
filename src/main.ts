@@ -2,8 +2,8 @@ import Vue from 'vue'
 import { Component } from 'vue-property-decorator'
 
 import App from './App.vue'
-import 'font-awesome/css/font-awesome.min.css'
 import '../static/weui/weui.css'
+import '../static/iconfont/iconfont.css'
 
 Vue.config.productionTip = false
 App.mpType = 'app'
