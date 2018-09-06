@@ -50,7 +50,6 @@
       height: 100%;
       widows: 100%;
       background: rgba(0, 0, 0, 0.3);
-      transition: 0.3s;
     }
 
     .dialog-content {
