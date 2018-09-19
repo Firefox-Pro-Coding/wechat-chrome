@@ -43,7 +43,7 @@ export default class extends Vue {
     specName: '规格 1',
     price: 28,
     groupPrice: 15,
-    stock: 222,
+    stock: 8,
     selected: false,
   }, {
     id: 2,
@@ -162,7 +162,9 @@ export default class extends Vue {
       e.selected = false
     })
 
+    // init
     item.selected = true
+    this.itemInfo.count = 1
 
     this.itemInfo.price = item.price
     this.itemInfo.groupPrice = item.groupPrice
@@ -186,6 +188,9 @@ export default class extends Vue {
    * 展开商品规格弹窗
    */
   public increment(obj: any) {
+    if (obj.count >= obj.stock) {
+      return
+    }
     obj.count += 1
   }
 

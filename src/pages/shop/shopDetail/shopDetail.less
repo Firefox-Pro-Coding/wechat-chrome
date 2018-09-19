@@ -94,21 +94,28 @@
   .counter-wrapper {
     display: flex;
     flex-flow: row nowrap;
-    align-items: stretch;
-    justify-content: stretch;
     padding: 30rpx;
+    line-height: 60rpx;
     font-size: 14px;
 
     .counter-wrapper-left {
+      display: flex;
+      flex-flow: row nowrap;
       flex: 1 1 0;
+      align-items: center;
     }
 
     .counter-wrapper-right {
+      display: flex;
+      flex-flow: row nowrap;
       flex: 0 0 auto;
+      align-items: center;
+      justify-content: center;
 
       .counter-btn {
-        padding: 15rpx 25rpx;
+        padding: 0 18rpx;
         background: #f2f2f2;
+        box-sizing: border-box;
 
         &.disabled {
           opacity: 0.5;
@@ -117,7 +124,9 @@
 
       .counter-text {
         margin: 0 5rpx;
-        padding: 15rpx 45rpx;
+        padding: 0 45rpx;
+        width: 40rpx;
+        text-align: center;
         background: #f2f2f2;
       }
     }

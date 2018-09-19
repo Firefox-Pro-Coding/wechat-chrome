@@ -90,9 +90,13 @@
         <div class="counter-wrapper">
           <div class="counter-wrapper-left">数量</div>
           <div class="counter-wrapper-right">
-            <span class="counter-btn" :class="{ disabled: itemInfo.count <= 1 }" @click="decrement(itemInfo)">-</span>
+            <span class="counter-btn" :class="{ disabled: itemInfo.count <= 1 }" @click="decrement(itemInfo)">
+              <i class="iconfont icon-minus"></i>
+            </span>
             <span class="counter-text">{{ itemInfo.count }}</span>
-            <span class="counter-btn" @click="increment(itemInfo)">+</span>
+            <span class="counter-btn" :class="{ disabled: itemInfo.count >= itemInfo.stock }" @click="increment(itemInfo)">
+              <i class="iconfont icon-plus"></i>
+            </span>
           </div>
         </div>
       </div>
