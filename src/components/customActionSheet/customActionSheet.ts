@@ -8,13 +8,16 @@ export default class CustomActionSheet extends Vue {
   @Prop({ type: Number, default: 0 })
   public offset!: number
 
+  @Prop({ default: null })
+  public props!: any
+
   public visible = false
   public timer = 0
   public classNames: Array<string> = []
 
-  public mounted() {
-    console.log(this)
-  }
+  // public mounted() {
+  //   console.log(this)
+  // }
 
   public onUnload() {
     this.visible = false
