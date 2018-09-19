@@ -31,6 +31,7 @@ export default class extends Vue {
   public itemInfo = {
     name: 'spiz Icecream 通兑电子券（全国通兑、仅限购买当日使用）',
     specId: '',
+    specTitle: '规格',
     price: 28,
     groupPrice: 15,
     stock: 222,
@@ -66,6 +67,7 @@ export default class extends Vue {
     this.itemInfo = {
       name: 'spiz Icecream 通兑电子券（全国通兑、仅限购买当日使用）',
       specId: '',
+      specTitle: '规格',
       price: 28,
       groupPrice: 15,
       stock: 222,

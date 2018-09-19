@@ -42,7 +42,7 @@
   }
 
   .topic-card-wrapper {
-    padding: 10rpx 20rpx 20rpx 20rpx;
+    padding: 10rpx 20rpx 20rpx;
     background: #fff7f7;
   }
 
@@ -62,10 +62,10 @@
   }
 
   .topic-card-wrapper .right-side-icon {
-    display:inline;
+    display: inline;
     margin: 2rpx 0 0 4rpx;
-    font-size:28rpx;
-    color:#cecece;
+    font-size: 28rpx;
+    color: #cecece;
   }
 
   .topic-card-wrapper .topic-card-list-wrapper {
@@ -81,7 +81,7 @@
   }
 
   .topic-card-wrapper .topic-card-list-content {
-    margin: 5rpx 0 10rpx 0;
+    margin: 5rpx 0 10rpx;
     display: flex;
     flex-flow: row nowrap;
     align-items: stretch;
@@ -90,7 +90,7 @@
   }
 
   .topic-card-wrapper .item-cell {
-    flex:0 0 auto;
+    flex: 0 0 auto;
     width: 250rpx;
     margin-right: 20rpx;
     background: #fff;
@@ -111,7 +111,7 @@
   }
 
   .item-cell .item-cell-title {
-    margin: 20rpx 20rpx 0 20rpx;
+    margin: 20rpx 20rpx 0;
     font-size: 14px;
   }
 

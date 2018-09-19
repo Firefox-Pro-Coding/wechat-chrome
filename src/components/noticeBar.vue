@@ -66,7 +66,7 @@
     align-self: center;
     text-overflow: ellipsis;
     white-space: nowrap;
-    zoom: 1
+    zoom: 1;
   }
 
   .notice-bar .right-side-icon {

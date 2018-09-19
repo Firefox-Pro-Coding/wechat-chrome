@@ -64,7 +64,7 @@
           <div class="spec-title-left">
             <div class="spec-title-img-outter">
               <div class="spec-title-img-wrapper">
-                <img class="spec-title-img" src="https://i.loli.net/2018/08/17/5b7688b39548e.png" alt="item">
+                <image class="spec-title-img" mode="aspectFit" :src="swiperConfig.imgUrls[0]" alt="item" />
               </div>
             </div>
             <div class="spec-title-text">
@@ -77,6 +77,7 @@
         </div>
 
         <div class="spec-wrapper">
+          <div class="spec-item-title">{{ itemInfo.specTitle }}</div>
           <div
             class="spec-item-cell"
             :class="{ selected: item.selected }"
