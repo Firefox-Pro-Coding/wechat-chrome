@@ -29,12 +29,12 @@
       <div class="item-name">{{ itemInfo.name }}</div>
     </div>
 
-    <div class="box mt-10 flex item-spec-wrapper" @click="choseItemSpec">
+    <div class="flex item-spec-wrapper" @click="choseItemSpec">
       <div class="left-side-text">规格</div>
       <i class="iconfont icon-right right-side-icon"></i>
     </div>
 
-    <div class="mt-10 item-desc-wrapper">
+    <div class="item-desc-wrapper">
       <div class="item-desc-title">商品详情</div>
       <div class="item-desc-text">{{ itemInfo.detail }}</div>
     </div>

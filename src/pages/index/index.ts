@@ -13,8 +13,59 @@ export default class extends Vue {
   public userInfo = {}
 
   public created() {
-    // 调用应用实例的方法获取全局数据
+    // 应用创建
     this.getUserInfo()
+  }
+
+  public getUserInfo() {
+    // 获取用户信息
+    wx.getSetting({
+      success: (res) => {
+        if (res.authSetting['scope.userInfo']) {
+          wx.getUserInfo({
+            success: (resp: any) => {
+              console.log(resp.userInfo)
+              // 用户已授权
+              this.userInfo = resp.userInfo
+              console.log('用户已授权')
+            }
+          })
+        } else {
+          console.log('用户未授权')
+          wx.showModal({
+            title: '警告',
+            content: '尚未进行授权，请点击确定跳转到授权页面进行授权',
+            success: (resp: any) => {
+              if (resp.confirm) {
+                // wx.navigateTo({
+                //   url: '../tologin/tologin',
+                // })
+                wx.switchTab({
+                  url: '/pages/index/main',
+                })
+              }
+            }
+          })
+        }
+      }
+    })
+  }
+
+  public checkUserWxVersion() {
+    if (wx.canIUse('button.open-type.getUserInfo')) {
+      // 用户版本可用
+    } else {
+      console.log('请升级微信版本')
+    }
+  }
+
+  public bindGetUserInfo(e: any) {
+    if (e.mp.detail.rawData) {
+      console.log('用户允许授权')
+      this.userInfo = e.mp.detail.userInfo
+    } else {
+      console.log('用户拒绝授权')
+    }
   }
 
   public bindViewTap() {
@@ -27,17 +78,25 @@ export default class extends Vue {
     console.log('clickHandle:', msg, ev)
   }
 
-  private getUserInfo() {
-    // 调用登录接口
-    wx.login({
-      success: () => {
-        wx.getUserInfo({
-          success: (res) => {
-            console.log(res)
-            this.userInfo = res.userInfo
-          },
-        })
-      },
+  /**
+   * launchAppError
+   * 打开应用失败
+   */
+  public launchAppError(e: any) {
+    console.log(e)
+    // 先从APP内打开小程序，才能返回打开APP
+    wx.showToast({
+      title: `${e.mp.detail.errMsg || '-'}`,
+      icon: 'none',
     })
   }
+
+  /**
+   * onShareAppMessage
+   * 全局分享
+   */
+  public onShareAppMessage() {
+    console.log('share')
+  }
+
 }

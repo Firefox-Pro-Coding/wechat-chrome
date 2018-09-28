@@ -82,7 +82,7 @@ export default class extends Vue {
 
   public onLoad(e: any) {
     this.stateParams = e
-    console.log('stateParams', this.stateParams)
+    // console.log('stateParams', this.stateParams)
 
     // wx.showShareMenu({
     //   withShareTicket: true,

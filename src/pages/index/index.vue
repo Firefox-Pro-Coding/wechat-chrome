@@ -14,38 +14,59 @@
       </div>
     </div>
 
-    <button open-type="getUserInfo" v-if="!userInfo.avatarUrl">获取授权</button>
+    <button
+      class="user-info-btn"
+      open-type="getUserInfo"
+      @getuserinfo="bindGetUserInfo"
+      @click="checkUserWxVersion"
+      v-if="!userInfo.avatarUrl">
+      获取授权
+    </button>
 
-    <form class="form-container">
-      <input type="text" class="form-control" v-model="motto" placeholder="v-model" />
-      <input type="text" class="form-control" v-model.lazy="motto" placeholder="v-model.lazy" />
-    </form>
-    <i class="fa fa-flag"></i><a href="/pages/counter/main" class="counter">去往Vuex示例页面</a>
+    <div v-if="userInfo.avatarUrl">
+      <form class="form-container">
+        <input type="text" class="form-control" v-model="motto" placeholder="v-model" />
+        <input type="text" class="form-control" v-model.lazy="motto" placeholder="v-model.lazy" />
+      </form>
+      <a class="counter link" href="/pages/counter/main">Go to Vuex Demo</a>
+
+      <button class="launch-app-btn" app-parameter="wechat" open-type="launchApp" @error="launchAppError">打开App</button>
+    </div>
   </div>
 </template>
 
 <script src="./index.ts" lang="ts"></script>
 
-<style scoped>
+<style lang="less" scoped>
   .userinfo {
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
 
-  .userinfo-avatar {
-    width: 128rpx;
-    height: 128rpx;
-    margin: 20rpx;
-    border-radius: 50%;
-  }
+    .userinfo-avatar {
+      width: 128rpx;
+      height: 128rpx;
+      margin: 20rpx;
+      border-radius: 50%;
+    }
 
-  .userinfo-nickname {
-    color: #aaa;
+    .userinfo-nickname {
+      color: #aaa;
+    }
   }
 
   .usermotto {
     margin-top: 20px;
+  }
+
+  .user-info-btn {
+    margin-bottom: 20px;
+    font-size: 14px;
+  }
+
+  .launch-app-btn {
+    font-size: 14px;
+    width: 200rpx;
   }
 
   .form-control {
@@ -59,7 +80,5 @@
     display: inline-block;
     margin: 10px auto;
     padding: 5px 10px;
-    color: blue;
-    border: 1px solid blue;
   }
 </style>
