@@ -2,6 +2,8 @@ import Vue from 'vue'
 import { Component } from 'vue-property-decorator'
 
 import App from './App.vue'
+// tslint:disable-next-line:no-import-side-effect
+import '../static/common.less'
 import '../static/weui/weui.css'
 import '../static/iconfont/iconfont.css'
 
