@@ -24,7 +24,9 @@ export default class extends Vue {
     ]
   }
 
-  public stateParams = {}
+  public stateParams = {
+    id: ''
+  }
 
   public noticeInfo = '详情页'
 
@@ -80,33 +82,9 @@ export default class extends Vue {
     })
   }
 
+  // 入参
   public onLoad(e: any) {
     this.stateParams = e
-    // console.log('stateParams', this.stateParams)
-
-    // wx.showShareMenu({
-    //   withShareTicket: true,
-    //   success(res) {
-    //     // 分享成功
-    //     console.log('分享成功', res)
-    //   },
-    //   fail(res) {
-    //     // 分享失败
-    //     console.log('分享失败', res)
-    //   }
-    // })
-
-    // wx.getShareInfo({
-    //   shareTicket: ''
-    // })
-  }
-
-  /**
-   * onShareAppMessage
-   * 全局分享
-   */
-  public onShareAppMessage() {
-    console.log('share')
   }
 
   /**
@@ -194,6 +172,28 @@ export default class extends Vue {
       return
     }
     obj.count += 1
+  }
+
+  /**
+   * onShareAppMessage
+   * 全局分享
+   */
+  public onShareAppMessage(params: any) {
+    const shareConfig = {
+      title: this.itemInfo.name,
+      path: `pages/shop/shopDetail/main?id=${this.stateParams.id || ''}`,
+      imageUrl: 'https://i.loli.net/2018/09/28/5badedcc0c800.jpg',
+      success(res: any) {
+        console.log('shareSuccess', res)
+      },
+      fail(res: any) {
+        console.log('shareFailed', res)
+      }
+    }
+
+    Object.assign(shareConfig, params)
+
+    return shareConfig
   }
 
   /**

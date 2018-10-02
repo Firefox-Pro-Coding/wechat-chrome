@@ -107,7 +107,7 @@
       <div class="share-bar">
         <div class="share-wrapper">
           <div class="share-cell">
-            <i class="share-cell-icon iconfont icon-wechat" @click="shareToFriends"></i>
+            <button ref="hi" open-type="share" class="share-cell-icon iconfont icon-wechat" @click="shareToFriends"></button>
             <div class="share-cell-text">分享给朋友</div>
           </div>
           <div class="share-cell">

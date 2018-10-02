@@ -164,10 +164,18 @@
 
       .share-cell-icon {
         width: 100rpx;
-        border-radius: 50%;
         background: #fff;
-        text-align: center;
         font-size: 30px;
+        border: none;
+      }
+
+      .share-cell-icon::after {
+        border: none;
+      }
+
+      .share-cell-icon.iconfont {
+        line-height: inherit;
+        border-radius: 50%;
       }
 
       .share-cell-text {
@@ -176,10 +184,12 @@
       }
 
       .icon-wechat {
+        padding: 0;
         color: #1AAD16;
       }
 
       .icon-qrcode {
+        text-align: center;
         color: #1fc1f1;
       }
     }

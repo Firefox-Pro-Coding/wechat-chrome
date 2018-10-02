@@ -81,10 +81,13 @@ export default class extends Vue {
   /**
    * launchAppError
    * 打开应用失败
+   *
+   * 条件:
+   * 1. APP 和小程序绑定同一个认证的开放平台账号
+   * 2. APP 接入微信终端 SDK
    */
   public launchAppError(e: any) {
     console.log(e)
-    // 先从APP内打开小程序，才能返回打开APP
     wx.showToast({
       title: `${e.mp.detail.errMsg || '-'}`,
       icon: 'none',

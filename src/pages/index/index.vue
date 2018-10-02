@@ -30,7 +30,7 @@
       </form>
       <a class="counter link" href="/pages/counter/main">Go to Vuex Demo</a>
 
-      <button class="launch-app-btn" app-parameter="wechat" open-type="launchApp" @error="launchAppError">打开App</button>
+      <button class="launch-app-btn" app-parameter="dingtalk://dingtalkclient/" open-type="launchApp" @error="launchAppError">打开App</button>
     </div>
   </div>
 </template>
